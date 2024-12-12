@@ -1,10 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   SidebarContainer,
   SidebarList,
   SidebarListItem,
   LogoutContainer,
 } from "./Sidebar.styles";
+import Button from "../button/Button";
 
 interface Menu {
   title: string;
@@ -20,6 +21,13 @@ const menus: Menu[] = [
 const Sidebar = () => {
   const location = useLocation();
 
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // dispatch logout 넣을 예정
+    navigate("lougout");
+  };
+
   return (
     <SidebarContainer>
       <SidebarList>
@@ -32,7 +40,9 @@ const Sidebar = () => {
           );
         })}
       </SidebarList>
-      <LogoutContainer></LogoutContainer>
+      <LogoutContainer>
+        <Button text="Logout" onClick={handleLogout} />
+      </LogoutContainer>
     </SidebarContainer>
   );
 };
