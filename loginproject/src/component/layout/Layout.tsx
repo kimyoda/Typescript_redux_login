@@ -1,5 +1,16 @@
+import { Outlet } from "react-router-dom";
+import { LayoutContainer } from "./Layout.styles";
+import Sidebar from "./Sidebar";
+
 const Layout = () => {
-  return <div>Layout</div>;
+  const isLoggedIn = false;
+
+  return (
+    <LayoutContainer isLoggedIn={isLoggedIn}>
+      <Sidebar />
+      <Outlet />
+    </LayoutContainer>
+  );
 };
 
 export default Layout;
