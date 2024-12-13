@@ -25,7 +25,7 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     // dispatch logout 넣을 예정
-    navigate("lougout");
+    navigate("/login");
   };
 
   return (

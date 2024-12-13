@@ -3,7 +3,7 @@ import { LayoutContainer } from "./Layout.styles";
 import Sidebar from "./Sidebar";
 
 const Layout = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <LayoutContainer isLoggedIn={isLoggedIn}>
