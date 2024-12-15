@@ -6,6 +6,8 @@ import {
   LogoutContainer,
 } from "./Sidebar.styles";
 import Button from "../button/Button";
+import { useAppDispatch } from "../../store/store";
+import { setLogout } from "../../reducres/loginSlice";
 
 interface Menu {
   title: string;
@@ -20,11 +22,13 @@ const menus: Menu[] = [
 
 const Sidebar = () => {
   const location = useLocation();
-
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     // dispatch logout 넣을 예정
+    dispatch(setLogout());
+
     navigate("/login");
   };
 
